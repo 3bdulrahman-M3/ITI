@@ -1,0 +1,64 @@
+*{
+    font-family:Arial;
+}
+
+h1{
+    color:blue;
+}
+
+.intro{
+    background-color: lightyellow;
+}
+
+#container{
+    border : 2px solid black;
+}
+
+footer,ul{
+    margin-top: 20px;
+}
+
+ul li{
+    font-size: 18px;
+}
+
+#container > p {
+    color: green;
+}
+.box + a {
+    font-weight: bold;
+}
+
+.box~a {
+    text-decoration: underline dashed;
+}
+
+a[id="special-link"] {
+    color: purple;
+}
+a:hover{
+    background-color: lightblue;
+}
+li:nth-child(even){
+    background-color: rgb(196, 72, 72);
+}
+
+.note::before{
+    content: "Note: ";
+    font-weight: bold;
+}
+
+.special::after {
+    content: "(Special)";
+}
+
+.before-img::after{
+    content: "";    
+    background-image: url('https://gratisography.com/wp-content/uploads/2025/03/gratisography-robot-portrait-1036x780.jpg');
+    background-size: cover;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+}
+
+
