@@ -59,7 +59,7 @@ div.part2{
     justify-content: space-between;
     align-items: center;
     margin: 10px auto -10px;
-    width: 80%;
+    width: 100%;
     
 }
 
@@ -131,10 +131,10 @@ div.part3{
     border: 0px;
     font-weight: 900;
     font-size: 20px;
-    padding: 0 25px;
+    padding: 10px 25px;
     cursor: pointer;
 }
-.filters a:hover {
+.filters a:hover{
     border-bottom: 2px solid #d72300;
     font-weight: 900;
     font-size: 20px;
@@ -271,6 +271,16 @@ div.part3{
         display: block;
         margin: 0 auto;
     }
+    div.filters {
+        display: flex;
+        flex-wrap: nowrap;
+        position: absolute;
+        padding: 5px 0;
+        width: 100%;
+        background-color: rgba(124, 124, 124, 0.5);
+        padding-left: 20px;
+        overflow: auto;
+    }
 
     .filters>a {
         font-size: 18px;
@@ -289,6 +299,10 @@ div.part3{
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+    div.part3 img{
+        visibility: hidden;
+        margin-top: 5px;
     }
 
 }

@@ -122,8 +122,10 @@ select option:hover {
 
 @media (max-width: 768px) {
     .header {
-        flex-direction: column;
+        flex-direction: row;
         gap: 10px;
+        flex-wrap: nowrap;
+        overflow: auto;
     }
 
     .header a {
