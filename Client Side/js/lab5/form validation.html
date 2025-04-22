@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            padding: 20px;
+        }
+
+        .container {
+            background: #fff;
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        input.invalid {
+            border-color: #e74c3c;
+        }
+
+        .error {
+            color: #e74c3c;
+            font-size: 0.85em;
+            margin-top: -8px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .valid-icon {
+            display: none;
+            color: green;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        input.valid {
+            border-color: #2ecc71; /* أخضر */
+        }
+
+        .success {
+            color: green;
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .radio-group,
+        .checkbox-group {
+            margin-bottom: 10px;
+        }
+
+        .radio-group input,
+        .checkbox-group input {
+            margin-right: 5px;
+        }
+
+        button {
+            background: #3498db;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            width: 100%;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Register</h2>
+    <form id="registerForm" method="post">
+        <label>Full Name:</label>
+        <input type="text" id="fullName">
+        <span class="valid-icon" id="nameValidIcon">✓</span>
+        <span class="error" id="nameError"></span>
+
+        <label>Email:</label>
+        <input type="text" id="email">
+        <span class="valid-icon" id="emailValidIcon">✓</span>
+        <span class="error" id="emailError"></span>
+
+        <label>Password:</label>
+        <input type="password" id="password">
+        <span class="valid-icon" id="passwordValidIcon">✓</span>
+        <span class="error" id="passwordError"></span>
+
+        <label>Age:</label>
+        <input type="number" id="age">
+        <span class="valid-icon" id="ageValidIcon">✓</span>
+        <span class="error" id="ageError"></span>
+
+        <label>Gender:</label>
+        <div class="radio-group">
+            <input type="radio" name="gender" value="male"> Male
+            <input type="radio" name="gender" value="female"> Female
+        </div>
+        <span class="error" id="genderError"></span>
+
+        <div class="checkbox-group">
+            <input type="checkbox" id="terms"> I agree to terms
+        </div>
+        <span class="error" id="termsError"></span>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<script src="script.js">
+          
+</script>
+</body>
+</html>
