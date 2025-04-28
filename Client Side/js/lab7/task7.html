@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>task7</title>
+</head>
+
+<body>
+    <script>
+        var users = [
+            {
+                name: "mahmoud",
+                transactions: [
+                    { amount: 500, type: "credit" },
+                    { amount: 200, type: "debit" },
+                    { amount: 1000, type: "credit" },
+                    { amount: "700", type: "debit" }, // invalid amount (string)
+                    { amount: 300, type: "refund" }   // invalid type
+                ]
+            },
+            {
+                name: "karim",
+                transactions: [
+                    { amount: 300, type: "debit" },
+                    { amount: 22000, type: "credit" },
+                    { amount: 400, type: "credit" },
+                ]
+            },
+        ];
+
+
+        function isValidTransaction(transaction) {
+           if (typeof transaction.amount !== "number" || transaction.amount <= 0) {
+                return false;
+            }
+            else if (transaction.type !== "credit" && transaction.type !== "debit") {
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+
+        function isCredit(transaction) {
+            return transaction.type === "credit";
+        }
+
+        function isDebit(transaction) {
+            return transaction.type === "debit";
+        }
+
+        function sum(total, transaction) {
+            return total + transaction.amount;
+        }
+
+   
+
+        // function format(amount) {
+        //     return "$" + amount;
+        // }
+
+        function getUserSummary(user) {
+                var validTransactions = user.transactions.filter(isValidTransaction);
+                var creditTransactions = validTransactions.filter(isCredit);
+                var debitTransactions = validTransactions.filter(isDebit);
+
+                var totalCredit = creditTransactions.reduce(sum, 0);
+                var totalDebit = debitTransactions.reduce(sum, 0);
+                var balance = totalCredit - totalDebit;
+                var status 
+                if (balance > 0) {
+                    status = "positive";
+                } else if (balance < 0) {
+                    status = "negative";
+                } else {
+                    status = "zero";
+                }
+                return {
+                    name: user.name,
+                    totalCredit: (totalCredit),
+                    totalDebit:  (totalDebit),
+                    balance: (balance),
+                    status: status
+                };
+            }
+            sortedUsers = users.map(getUserSummary).sort(function(a, b) {
+                return b.balance - a.balance;
+            });
+            console.log(sortedUsers);
+
+
+    </script>
+</body>
+
+</html>
